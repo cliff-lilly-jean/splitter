@@ -1,4 +1,7 @@
+// Components
+import Card from './Card/Card';
 
+// CSS
 import './App.css';
 
 function App() {

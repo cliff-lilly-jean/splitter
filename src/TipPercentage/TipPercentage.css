@@ -1,0 +1,20 @@
+.tip {
+ margin-bottom: 2px;
+}
+
+.tip-percentage__options {
+ display: grid;
+ gap: 15px;
+ grid-template-columns: repeat(3, 1fr);
+}
+
+.option {
+ background: #00474b;
+ color: white;
+ text-align: center;
+ border-radius: 5px;
+ padding: 5px 15px;
+ font-size: 16px;
+ max-width: 100px;
+ cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.card {
+ background: #fff;
+ width: 640px;
+ padding: 20px;
+ border-radius: 15px;
+ margin: 1em auto 0;
+
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ justify-content: space-between;
+ gap: 25px;
+}
+
+.card__left {
+ display: grid;
+ gap: 20px;
+}
+
+.card__right {
+ background: #00474b;
+ padding: 20px;
+
+ display: grid;
+ gap: 20px 10px;
+ grid-template-rows: 1fr 1fr 35px;
+}

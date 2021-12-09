@@ -1,0 +1,15 @@
+import React from 'react';
+
+// CSS
+import './NumberOfPeople.css';
+
+const NumberOfPeople = () => {
+ return (
+  <div className="number-of-people">
+   <label htmlFor="people" className="section-title num-of-ppl">Number of People</label>
+   <input type="text" name="people" id="people" placeholder='5' />
+  </div>
+ );
+};
+
+export default NumberOfPeople;
