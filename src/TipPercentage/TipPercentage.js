@@ -4,16 +4,22 @@ import React from 'react';
 import './TipPercentage.css';
 
 const TipPercentage = () => {
+
+ const handleClick = (buttonPercentage) => {
+  const clickedButtonPercentage = buttonPercentage.target.innerHTML;
+  console.log(clickedButtonPercentage + '%');
+ };
+
  return (
   <div className="tip-percentage">
    <p className="section-title tip">Select Tip %</p>
    <div className="tip-percentage__options">
-    <div className="option">1%</div>
-    <div className="option">8%</div>
-    <div className="option">15%</div>
-    <div className="option">20%</div>
-    <div className="option">25%</div>
-    <div className="option">30%</div>
+    <button className="option" onClick={handleClick}>1%</button>
+    <button className="option" onClick={handleClick}>8%</button>
+    <button className="option" onClick={handleClick}>15%</button>
+    <button className="option" onClick={handleClick}>20%</button>
+    <button className="option" onClick={handleClick}>25%</button>
+    <button className="option" onClick={handleClick}>30%</button>
    </div>
   </div>
  );
