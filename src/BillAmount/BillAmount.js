@@ -8,8 +8,9 @@ const BillAmount = () => {
 
  const handleChange = (userInput) => {
 
-  // Check to see if the input value is a number or not
   let currentUserInputNumber = userInput.target.value;
+
+  // Check to see if the input value is a number or not
   const isNumber = isNaN(currentUserInputNumber);
 
   // Handle case where input is not a number
@@ -18,7 +19,6 @@ const BillAmount = () => {
    currentUserInputNumber = '';
   } else {
    setBillAmount(currentUserInputNumber);
-   console.log(billAmount);
   }
  };
 

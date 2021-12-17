@@ -6,20 +6,36 @@ import './TipPercentage.css';
 const TipPercentage = () => {
 
  const handleClick = (buttonPercentage) => {
-  const clickedButtonPercentage = buttonPercentage.target.innerHTML;
-  console.log(clickedButtonPercentage + '%');
+  let clickedButtonPercentage = buttonPercentage.target.innerHTML;
+
+  // Handle the custom value
+  if (buttonPercentage.target.innerHTML === 'Custom') {
+   // Get a custom value from the user
+   let usersCustomValue = 0;
+   usersCustomValue = prompt('Please enter your custom value');
+
+   // Check if the custom value is a number
+   if (isNaN(usersCustomValue) === true) {
+    alert('It has to be a number value');
+    return;
+   } else {
+    clickedButtonPercentage = usersCustomValue;
+   }
+   return clickedButtonPercentage;
+  }
+  return clickedButtonPercentage;
  };
 
  return (
   <div className="tip-percentage">
    <p className="section-title tip">Select Tip %</p>
    <div className="tip-percentage__options">
-    <button className="option" onClick={handleClick}>1%</button>
-    <button className="option" onClick={handleClick}>8%</button>
+    <button className="option" onClick={handleClick}>5%</button>
+    <button className="option" onClick={handleClick}>10%</button>
     <button className="option" onClick={handleClick}>15%</button>
-    <button className="option" onClick={handleClick}>20%</button>
     <button className="option" onClick={handleClick}>25%</button>
-    <button className="option" onClick={handleClick}>30%</button>
+    <button className="option" onClick={handleClick}>50%</button>
+    <button className="option custom" onClick={handleClick}>Custom</button>
    </div>
   </div>
  );
