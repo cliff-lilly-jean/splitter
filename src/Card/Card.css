@@ -2,25 +2,26 @@
  background: #fff;
  width: 640px;
  padding: 20px;
- border-radius: 15px;
+ border-radius: 20px;
  margin: 1em auto 0;
 
  display: grid;
  grid-template-columns: repeat(2, 1fr);
  justify-content: space-between;
- gap: 25px;
+ gap: 20px 40px;
 }
 
 .card__left {
  display: grid;
- gap: 20px;
+ gap: 40px 30px;
 }
 
 .card__right {
  background: #00474b;
  padding: 20px;
+ border-radius: 10px;
 
  display: grid;
- gap: 20px 10px;
+ gap: 20px;
  grid-template-rows: 1fr 1fr 35px;
 }

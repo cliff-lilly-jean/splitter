@@ -7,7 +7,7 @@ const NumberOfPeople = () => {
  return (
   <div className="number-of-people">
    <label htmlFor="people" className="section-title num-of-ppl">Number of People</label>
-   <input type="text" name="people" id="people" placeholder='5' />
+   <input type="text" name="people" id="people" className='input--primary' placeholder='5' />
   </div>
  );
 };

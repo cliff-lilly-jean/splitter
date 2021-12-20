@@ -1,5 +1,10 @@
-.tip {
- margin-bottom: 2px;
+.section-title.tip {
+ display: block;
+ margin-bottom: 8px;
+ letter-spacing: .01em;
+ font-size: 12px;
+ font-weight: bold;
+ color: #728181;
 }
 
 .tip-percentage__options {
@@ -28,7 +33,7 @@
 }
 
 .option:hover {
- background: #01595e;
+opacity: .8;
  transition: all .2s ease-in-out;
 }
 

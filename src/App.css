@@ -79,4 +79,17 @@ grid-template-columns: repeat(2, 1fr);
  font-size: .9rem;
 }
 
+.input--primary {
+ background: #f3f8fa;
+ color: #004f4b;
+ border: none;
+ padding: 5px 15px;
+ width: 100%;
+ border-radius: 5px;
+ font-weight: 700;
+ font-size: 1.05rem;
+ outline: none;
+ text-align: right;
+}
+
 /* MEDIA QUERIES */

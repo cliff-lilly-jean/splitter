@@ -25,7 +25,7 @@ const BillAmount = () => {
  return (
   <div className="bill">
    <label className="label section-title" htmlFor="bill">Bill</label>
-   <input className="bill-amount" value={billAmount} type="text" name="bill" onChange={handleChange} />
+   <input className="bill-amount input--primary" value={billAmount} type="text" name="bill" onChange={handleChange} />
   </div>
  );
 };
