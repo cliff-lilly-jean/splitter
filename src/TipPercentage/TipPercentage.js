@@ -3,10 +3,11 @@ import React from 'react';
 // CSS
 import './TipPercentage.css';
 
-const TipPercentage = () => {
+const TipPercentage = ({ setActiveTipButton }) => {
 
  const handleClick = (buttonPercentage) => {
   let clickedButtonPercentage = buttonPercentage.target.innerHTML;
+  let targetedButton = buttonPercentage.target;
 
   // Handle the custom value
   if (buttonPercentage.target.innerHTML === 'Custom') {
@@ -23,6 +24,7 @@ const TipPercentage = () => {
    }
    return clickedButtonPercentage;
   }
+  setActiveTipButton(targetedButton);
   return clickedButtonPercentage;
  };
 

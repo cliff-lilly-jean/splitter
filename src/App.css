@@ -76,7 +76,9 @@ grid-template-columns: repeat(2, 1fr);
 }
 
 .sz--sm {
- font-size: .9rem;
+ font-size: 12px;
+ letter-spacing: .01em;
+ font-weight: 700;
 }
 
 .input--primary {
