@@ -6,37 +6,54 @@ import './TipPercentage.css';
 const TipPercentage = () => {
 
  const handleClick = (buttonPercentage) => {
-  let clickedButtonPercentage = buttonPercentage.target.innerHTML;
-  let targetedButton = buttonPercentage.target;
+  let clickedButtonPercentage = buttonPercentage.target;
+  // let targetedButton = buttonPercentage.target;
 
+  handleButtonActive(clickedButtonPercentage);
 
-  // Handle the custom value
-  if (buttonPercentage.target.innerHTML === 'Custom') {
-   // Get a custom value from the user
-   let usersCustomValue = 0;
-   usersCustomValue = prompt('Please enter your custom value');
-
-   // Check if the custom value is a number
-   if (isNaN(usersCustomValue) === true) {
-    alert('It has to be a number value');
-    return;
-   } else {
-    clickedButtonPercentage = usersCustomValue;
-   }
+  if (clickedButtonPercentage.innerHTML === 'Custom') {
+   handleCustomValueClick(clickedButtonPercentage);  // Handle the custom value
+  } else {
+   // console.log(clickedButtonPercentage);
    return clickedButtonPercentage;
   }
-  // Add active class to the buttons
-  let allButtons = document.getElementsByTagName('button');
-  for (let i = 0; i <= allButtons.length; i++) {
-   if (targetedButton === allButtons[i]) {
-    allButtons[i].classList.add('active');
-   } else {
-    return;
-   }
-  }
-  console.log(targetedButton);
-  return clickedButtonPercentage;
  };
+
+
+ const handleCustomValueClick = (clickedButton) => {
+  // Get a custom value from the user
+  let usersCustomValue = 0;
+  usersCustomValue = prompt('Please enter your custom value');
+
+  // Check if the custom value is a number
+  if (isNaN(usersCustomValue) === true) {
+   alert('It has to be a number value');
+   return;
+  } else {
+   clickedButton = usersCustomValue;
+  }
+
+  console.log(clickedButton);
+  return clickedButton;
+ };
+
+ const handleButtonActive = (clickedButton) => {
+  // Get the ID of the specific button
+  let currentActiveButton = clickedButton;
+
+  // get all the buttons
+  let allButtons = document.getElementsByClassName('option');
+
+  // if a button has the active class already remove it
+
+  for (let i = 0; i <= allButtons.length - 1; i++) {
+   allButtons[i].classList.remove('active');
+  }
+
+  // add the active class to the current clicked button
+  currentActiveButton.classList.add('active');
+ };
+
 
  return (
   <div className="tip-percentage">
@@ -49,7 +66,7 @@ const TipPercentage = () => {
     <button className="option" onClick={handleClick}>50%</button>
     <button className="option custom" onClick={handleClick}>Custom</button>
    </div>
-  </div>
+  </div >
  );
 };
 
