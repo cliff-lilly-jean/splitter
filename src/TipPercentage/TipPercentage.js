@@ -3,11 +3,12 @@ import React from 'react';
 // CSS
 import './TipPercentage.css';
 
-const TipPercentage = ({ setActiveTipButton }) => {
+const TipPercentage = () => {
 
  const handleClick = (buttonPercentage) => {
   let clickedButtonPercentage = buttonPercentage.target.innerHTML;
   let targetedButton = buttonPercentage.target;
+
 
   // Handle the custom value
   if (buttonPercentage.target.innerHTML === 'Custom') {
@@ -24,7 +25,16 @@ const TipPercentage = ({ setActiveTipButton }) => {
    }
    return clickedButtonPercentage;
   }
-  setActiveTipButton(targetedButton);
+  // Add active class to the buttons
+  let allButtons = document.getElementsByTagName('button');
+  for (let i = 0; i <= allButtons.length; i++) {
+   if (targetedButton === allButtons[i]) {
+    allButtons[i].classList.add('active');
+   } else {
+    return;
+   }
+  }
+  console.log(targetedButton);
   return clickedButtonPercentage;
  };
 
