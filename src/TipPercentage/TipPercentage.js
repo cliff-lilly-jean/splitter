@@ -10,6 +10,7 @@ const TipPercentage = () => {
   // let targetedButton = buttonPercentage.target;
 
   handleButtonActive(clickedButtonPercentage);
+  handleInnerHtml(clickedButtonPercentage);
 
   if (clickedButtonPercentage.innerHTML === 'Custom') {
    handleCustomValueClick(clickedButtonPercentage);  // Handle the custom value
@@ -30,10 +31,9 @@ const TipPercentage = () => {
    alert('It has to be a number value');
    return;
   } else {
-   clickedButton = usersCustomValue;
+   clickedButton = usersCustomValue + '%';
   }
 
-  console.log(clickedButton);
   return clickedButton;
  };
 
@@ -45,13 +45,17 @@ const TipPercentage = () => {
   let allButtons = document.getElementsByClassName('option');
 
   // if a button has the active class already remove it
-
   for (let i = 0; i <= allButtons.length - 1; i++) {
    allButtons[i].classList.remove('active');
   }
 
   // add the active class to the current clicked button
   currentActiveButton.classList.add('active');
+ };
+
+ const handleInnerHtml = (item) => {
+  console.log(item.innerHTML);
+  return item.innerHTML;
  };
 
 

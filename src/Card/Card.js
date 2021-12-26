@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // Components
 import BillAmount from '../BillAmount/BillAmount';
@@ -13,13 +13,11 @@ import './Card.css';
 
 const Card = () => {
 
- const [activeTipButton, setActiveTipButton] = useState(false);
-
  return (
   <div className="card">
    <div className="card__left">
     <BillAmount></BillAmount>
-    <TipPercentage setActiveTipButton={setActiveTipButton}></TipPercentage>
+    <TipPercentage></TipPercentage>
     <NumberOfPeople></NumberOfPeople>
    </div>
    <div className="card__right">
