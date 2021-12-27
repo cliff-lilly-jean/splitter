@@ -1,9 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 // CSS
 import './TipPercentage.css';
 
 const TipPercentage = () => {
+
+ const state = useSelector((state) => state);
+ console.log(state);
 
  const handleClick = (buttonPercentage) => {
   let clickedButtonPercentage = buttonPercentage.target;
