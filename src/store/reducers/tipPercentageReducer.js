@@ -1,6 +1,6 @@
 const reducer = (state = 0, action) => {
  switch (action.type) {
-  case 'change percentage':
+  case 'update tip percentage':
    return action.payload;
   default:
    return state;
