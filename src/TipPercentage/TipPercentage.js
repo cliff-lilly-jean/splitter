@@ -50,6 +50,7 @@ const TipPercentage = () => {
   return updateTipPercentage(clickedButton);
  };
 
+ // function(): handle the current button's active state
  const handleButtonActive = (clickedButton) => {
   // Get the ID of the specific button
   let currentActiveButton = clickedButton;
@@ -66,6 +67,7 @@ const TipPercentage = () => {
   currentActiveButton.classList.add('active');
  };
 
+ // function(): handle the retrieval of the inner html
  const handleInnerHtml = (item) => {
   console.log(item.innerHTML);
   return item.innerHTML;
