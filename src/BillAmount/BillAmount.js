@@ -1,16 +1,26 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../state/index';
 
 // css
 import './BillAmount.css';
 
 const BillAmount = () => {
 
+ // pull in the state
  const bill = useSelector((state) => state.bill);
- console.log(bill);
+
+ // create a dispatch hook
+ const dispatch = useDispatch();
+
+ // get the action creators
+ const { updateBillAmount } = bindActionCreators(actionCreators, dispatch);
+
 
  const handleChange = (userInput) => {
 
+  // get the users input
   let currentUserInputNumber = userInput.target.value;
 
   // Check to see if the input value is a number or not
@@ -21,15 +31,14 @@ const BillAmount = () => {
    alert('You need to input a number');
    currentUserInputNumber = 0;
   } else {
-
-   return currentUserInputNumber;
+   return updateBillAmount(currentUserInputNumber);
   }
  };
 
  return (
   <div className="bill">
    <label className="label section-title" htmlFor="bill">Bill</label>
-   <input className="bill-amount input--primary" value={0} type="text" name="bill" onChange={handleChange} />
+   <input className="bill-amount input--primary" value={updateBillAmount(bill)} type="text" name="bill" onChange={handleChange} />
   </div>
  );
 };

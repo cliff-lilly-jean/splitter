@@ -1,10 +1,21 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../state/index';
 
 // CSS
 import './TipPercentage.css';
 
 const TipPercentage = () => {
 
+ // pull in the state
+ const tipPercentage = useSelector((state) => state.tipPercentage);
+
+ // create a dispatch hook
+ const dispatch = useDispatch();
+
+ // get the action creators
+ const { updateTipPercentage } = bindActionCreators(actionCreators, dispatch);
 
 
  const handleClick = (buttonPercentage) => {
@@ -18,7 +29,7 @@ const TipPercentage = () => {
    handleCustomValueClick(clickedButtonPercentage);  // Handle the custom value
   } else {
    // console.log(clickedButtonPercentage);
-   return clickedButtonPercentage;
+   return updateTipPercentage(clickedButtonPercentage.innerHTML);
   }
  };
 
@@ -36,7 +47,7 @@ const TipPercentage = () => {
    clickedButton = usersCustomValue + '%';
   }
 
-  return clickedButton;
+  return updateTipPercentage(clickedButton);
  };
 
  const handleButtonActive = (clickedButton) => {
