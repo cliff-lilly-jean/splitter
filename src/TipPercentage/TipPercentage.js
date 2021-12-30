@@ -11,7 +11,7 @@ const TipPercentage = () => {
  const custom = 'Custom';
 
  // pull in the state
- const tipPercentage = useSelector((state) => state.tipPercentage);
+ let tipPercentage = useSelector((state) => state.tipPercentage);
 
  // create a dispatch hook
  const dispatch = useDispatch();
@@ -23,15 +23,16 @@ const TipPercentage = () => {
  const handleClick = (buttonPercentage) => {
   let clickedButtonPercentage = buttonPercentage.target;
   // let targetedButton = buttonPercentage.target;
+  tipPercentage = clickedButtonPercentage;
 
-  handleButtonActive(clickedButtonPercentage);
-  handleInnerHtml(clickedButtonPercentage);
+  handleButtonActive(tipPercentage);
+  handleInnerHtml(tipPercentage);
 
   if (clickedButtonPercentage.innerHTML === 'Custom') {
-   handleCustomValueClick(clickedButtonPercentage);  // Handle the custom value
+   handleCustomValueClick(tipPercentage);  // Handle the custom value
   } else {
    // console.log(clickedButtonPercentage);
-   return updateTipPercentage(clickedButtonPercentage.innerHTML);
+   return updateTipPercentage(tipPercentage.innerHTML);
   }
  };
 

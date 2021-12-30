@@ -5,7 +5,7 @@ import BillAmount from '../BillAmount/BillAmount';
 import TipPercentage from '../TipPercentage/TipPercentage';
 import NumberOfPeople from '../NumberOfPeople/NumberOfPeople';
 import TipAmount from '../TipAmount/TipAmount';
-import TotalTip from '../TotalTip/TotalTip';
+import Total from '../Total/Total';
 import Button from '../Button/Button';
 
 // CSS
@@ -22,7 +22,7 @@ const Card = () => {
    </div>
    <div className="card__right">
     <TipAmount></TipAmount>
-    <TotalTip></TotalTip>
+    <Total></Total>
     <Button></Button>
    </div>
   </div>
