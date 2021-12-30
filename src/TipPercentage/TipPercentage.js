@@ -8,6 +8,8 @@ import './TipPercentage.css';
 
 const TipPercentage = () => {
 
+ const custom = 'Custom';
+
  // pull in the state
  const tipPercentage = useSelector((state) => state.tipPercentage);
 
@@ -44,7 +46,7 @@ const TipPercentage = () => {
    alert('It has to be a number value');
    return;
   } else {
-   clickedButton = usersCustomValue + '%';
+   clickedButton = usersCustomValue;
   }
 
   return updateTipPercentage(clickedButton);
@@ -69,8 +71,11 @@ const TipPercentage = () => {
 
  // function(): handle the retrieval of the inner html
  const handleInnerHtml = (item) => {
-  console.log(item.innerHTML);
   return item.innerHTML;
+ };
+
+ const generateATipPercent = (num) => {
+  return num;
  };
 
 
@@ -78,12 +83,12 @@ const TipPercentage = () => {
   <div className="tip-percentage">
    <p className="section-title tip">Select Tip %</p>
    <div className="tip-percentage__options">
-    <button className="option" onClick={handleClick}>5%</button>
-    <button className="option" onClick={handleClick}>10%</button>
-    <button className="option" onClick={handleClick}>15%</button>
-    <button className="option" onClick={handleClick}>25%</button>
-    <button className="option" onClick={handleClick}>50%</button>
-    <button className="option custom" onClick={handleClick}>Custom</button>
+    <button className="option" onClick={handleClick}>{generateATipPercent(5)}</button>
+    <button className="option" onClick={handleClick}>{generateATipPercent(10)}</button>
+    <button className="option" onClick={handleClick}>{generateATipPercent(15)}</button>
+    <button className="option" onClick={handleClick}>{generateATipPercent(25)}</button>
+    <button className="option" onClick={handleClick}>{generateATipPercent(50)}</button>
+    <button className="option custom" onClick={handleClick}>{generateATipPercent(custom)}</button>
    </div>
   </div >
  );
