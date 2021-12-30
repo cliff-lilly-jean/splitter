@@ -24,12 +24,3 @@ export const updateTipPercentage = (newTipPercentage) => {
   });
  };
 };
-
-export const updateTotalTipPercentage = (newTotalTip) => {
- return (dispatch) => {
-  dispatch({
-   type: 'update/change total tip percentage',
-   payload: newTotalTip
-  });
- };
-};

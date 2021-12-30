@@ -12,15 +12,6 @@ const TipAmount = () => {
  // pull in the state
  const state = useSelector((state) => state);
 
- let currentState = store.getState();
- console.log(currentState);
-
- let currentBill = state.bill;
- let currentPpl = state.numberOfPpl;
- let currentTipPercent = state.tipPercentage;
-
- const totalTipPerPerson = useSelector((state) => state.totalTipPerPerson);
-
  // create a dispatch hook
  const dispatch = useDispatch();
 
