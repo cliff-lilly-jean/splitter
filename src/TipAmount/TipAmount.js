@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { store } from '../state/store';
 
 // CSS
@@ -7,6 +7,7 @@ import './TipAmount.css';
 const TipAmount = () => {
 
  let [tipAmountPerPerson, setTipAmountPerPerson] = useState(0);
+
 
  // function(): calculate the total tip amount per person
  const handleChange = () => {
@@ -23,8 +24,10 @@ const TipAmount = () => {
    return tipAmountPerPerson = 0.00;
   }
 
+
   return setTipAmountPerPerson(tipAmountPerPerson.toFixed(2));
  };
+
 
  return (
   <div className="tip-amount two-col-grid">

@@ -32,7 +32,7 @@ const TipPercentage = () => {
    handleCustomValueClick(tipPercentage);  // Handle the custom value
   } else {
    // console.log(clickedButtonPercentage);
-   return updateTipPercentage(tipPercentage.innerHTML);
+   return updateTipPercentage(parseInt(tipPercentage.innerHTML));
   }
  };
 
@@ -76,7 +76,7 @@ const TipPercentage = () => {
  };
 
  const generateATipPercent = (num) => {
-  return num;
+  return num + '%';
  };
 
 
@@ -91,7 +91,7 @@ const TipPercentage = () => {
     <button className="option" onClick={handleClick}>{generateATipPercent(50)}</button>
     <button className="option custom" onClick={handleClick}>{generateATipPercent(custom)}</button>
    </div>
-  </div >
+  </div>
  );
 };
 
