@@ -22,16 +22,15 @@ const TipPercentage = () => {
 
  const handleClick = (buttonPercentage) => {
   let clickedButtonPercentage = buttonPercentage.target;
-  // let targetedButton = buttonPercentage.target;
   tipPercentage = clickedButtonPercentage;
 
   handleButtonActive(tipPercentage);
   handleInnerHtml(tipPercentage);
 
   if (clickedButtonPercentage.innerHTML === 'Custom') {
-   handleCustomValueClick(tipPercentage);  // Handle the custom value
+   // Handle the custom value
+   handleCustomValueClick(tipPercentage);
   } else {
-   // console.log(clickedButtonPercentage);
    return updateTipPercentage(parseInt(tipPercentage.innerHTML));
   }
  };
@@ -49,7 +48,6 @@ const TipPercentage = () => {
   } else {
    clickedButton = usersCustomValue;
   }
-
   return updateTipPercentage(clickedButton);
  };
 
@@ -79,6 +77,10 @@ const TipPercentage = () => {
   return num + '%';
  };
 
+ const generateACustomTipPercent = (num) => {
+  return num;
+ };
+
 
  return (
   <div className="tip-percentage">
@@ -89,7 +91,7 @@ const TipPercentage = () => {
     <button className="option" onClick={handleClick}>{generateATipPercent(15)}</button>
     <button className="option" onClick={handleClick}>{generateATipPercent(25)}</button>
     <button className="option" onClick={handleClick}>{generateATipPercent(50)}</button>
-    <button className="option custom" onClick={handleClick}>{generateATipPercent(custom)}</button>
+    <button className="option custom" onClick={handleClick}>{generateACustomTipPercent(custom)}</button>
    </div>
   </div>
  );
