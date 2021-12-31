@@ -7,8 +7,6 @@
  letter-spacing: .025em;
  line-height: 1.4;
  font-family: 'Space Mono', monospace;
- -webkit-font-smoothing: antialiased;
- -moz-font-smoothing: grayscale;
 }
 
 body {
