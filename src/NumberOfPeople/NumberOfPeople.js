@@ -27,9 +27,11 @@ const NumberOfPeople = () => {
 
   // Handle case where input is not a number
   if (isNumber === true) {
-   alert('You need to input a number');
    currentUserInputNumber = 0;
+   const numOfPplInput = document.querySelector('.people');
+   // numOfPplInput.value = '';
   } else {
+   // numOfPplInput.removeAttribute('attrName');
    return updateNumberOfPpl(currentUserInputNumber);
   }
  };
@@ -37,7 +39,7 @@ const NumberOfPeople = () => {
  return (
   <div className="number-of-people">
    <label htmlFor="people" className="section-title num-of-ppl">Number of People</label>
-   <input type="text" name="people" id="people" className='input--primary' value={updateNumberOfPpl(numOfPpl)} onChange={handleChange} />
+   <input type="text" name="people" id="people" className='people input--primary' required value={updateNumberOfPpl(numOfPpl)} onChange={handleChange} />
   </div>
  );
 };

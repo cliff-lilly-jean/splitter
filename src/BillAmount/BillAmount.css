@@ -6,3 +6,11 @@
  font-weight: bold;
  color: #728181;
 }
+
+.input--primary.bill-amount{
+ padding-left: 10px;
+ background-size: 9px 11px;
+ background-repeat: no-repeat;
+ background-position: 6% 50%;
+ background-image: url('../assets/images/icon-dollar.svg');
+}

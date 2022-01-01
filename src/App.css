@@ -79,17 +79,28 @@ grid-template-columns: repeat(2, 1fr);
  font-weight: 700;
 }
 
+.input--primary:focus {
+ border: 2px solid #1fc2ac;
+}
+
+.input--primary:valid {
+ border: 2px solid #aa6e63;
+}
+
 .input--primary {
  background: #f3f8fa;
  color: #004f4b;
  border: none;
- padding: 5px 15px;
+ padding: 5px 10px;
  width: 100%;
  border-radius: 5px;
  font-weight: 700;
  font-size: 1.05rem;
  outline: none;
  text-align: right;
+ border: 1px solid transparent;
 }
+
+
 
 /* MEDIA QUERIES */
