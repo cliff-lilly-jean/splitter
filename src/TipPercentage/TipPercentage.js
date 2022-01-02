@@ -22,6 +22,7 @@ const TipPercentage = () => {
  const handleClick = (buttonPercentage) => {
   let clickedButtonPercentage = buttonPercentage.target;
   // tipPercentage = clickedButtonPercentage;
+  console.log(clickedButtonPercentage);
 
   handleButtonActive(clickedButtonPercentage);
   handleInnerHtml(clickedButtonPercentage);
@@ -61,11 +62,12 @@ const TipPercentage = () => {
 
   // get the users input
   let currentUserInputNumber = userInput.target.value;
+  let customInput = document.querySelector('.option.custom');
 
-  if (currentUserInputNumber.length <= 0 || currentUserInputNumber === '') {
-   currentUserInputNumber = 'Custom';
-   console.log(currentUserInputNumber);
-   return updateTipPercentage(currentUserInputNumber);
+  if (customInput.length <= 0) {
+   customInput.value = 'Custom';
+   console.log(customInput.value);
+   return customInput.value;
   }
 
   return updateTipPercentage(currentUserInputNumber);
@@ -75,6 +77,7 @@ const TipPercentage = () => {
   e.target.value = '';
  };
 
+ // Todo: figure out why the custom button isn't reading  the word custom when the input field is empty
 
  return (
   <div className="tip-percentage">
@@ -85,8 +88,7 @@ const TipPercentage = () => {
     <button className="option" onClick={handleClick}>{generateATipPercent(15)}</button>
     <button className="option" onClick={handleClick}>{generateATipPercent(25)}</button>
     <button className="option" onClick={handleClick}>{generateATipPercent(50)}</button>
-    {/* TODO: fix this input to take in numbers and return those numbers as a percentage to be calculated in the formula */}
-    <input className="option custom" onClick={(e) => resetInput(e)} onChange={handleChange} value={updateTipPercentage(tipPercentage)} name="tip" />
+    <input className="option custom" onClick={(e) => resetInput(e)} onChange={handleChange} value={tipPercentage} name="tip" />
    </div>
   </div>
  );

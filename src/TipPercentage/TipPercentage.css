@@ -32,6 +32,7 @@
  color: #6e8787;
  text-align: right;
  caret-color: #99d3cb;
+ cursor:auto;
 }
 
 .option:hover {
