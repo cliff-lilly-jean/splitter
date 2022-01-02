@@ -21,8 +21,6 @@ const TipPercentage = () => {
 
  const handleClick = (buttonPercentage) => {
   let clickedButtonPercentage = buttonPercentage.target;
-  // tipPercentage = clickedButtonPercentage;
-  console.log(clickedButtonPercentage);
 
   handleButtonActive(clickedButtonPercentage);
   handleInnerHtml(clickedButtonPercentage);
@@ -62,19 +60,13 @@ const TipPercentage = () => {
 
   // get the users input
   let currentUserInputNumber = userInput.target.value;
-  let customInput = document.querySelector('.option.custom');
-
-  if (customInput.length <= 0) {
-   customInput.value = 'Custom';
-   console.log(customInput.value);
-   return customInput.value;
-  }
 
   return updateTipPercentage(currentUserInputNumber);
  };
 
  const resetInput = (e) => {
   e.target.value = '';
+  updateTipPercentage('');
  };
 
  // Todo: figure out why the custom button isn't reading  the word custom when the input field is empty
@@ -88,7 +80,8 @@ const TipPercentage = () => {
     <button className="option" onClick={handleClick}>{generateATipPercent(15)}</button>
     <button className="option" onClick={handleClick}>{generateATipPercent(25)}</button>
     <button className="option" onClick={handleClick}>{generateATipPercent(50)}</button>
-    <input className="option custom" onClick={(e) => resetInput(e)} onChange={handleChange} value={tipPercentage} name="tip" />
+
+    <input placeholder='Custom' className="option custom" onChange={handleChange} value={updateTipPercentage(tipPercentage)} name="tip" />
    </div>
   </div>
  );
