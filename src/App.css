@@ -53,6 +53,8 @@ header h1 span {
  font-size: 14px;
 }
 
+
+
 .two-col-grid {
 display: grid;
 gap: 10px;
@@ -79,13 +81,6 @@ grid-template-columns: repeat(2, 1fr);
  font-weight: 700;
 }
 
-.input--primary:focus {
- border: 2px solid #1fc2ac;
-}
-
-.input--primary:valid {
- border: 2px solid #aa6e63;
-}
 
 .input--primary {
  background: #f3f8fa;
@@ -99,6 +94,27 @@ grid-template-columns: repeat(2, 1fr);
  outline: none;
  text-align: right;
  border: 1px solid transparent;
+ position: relative;
+}
+
+.input--primary:focus{
+ border: 2px solid #1fc2ac;
+}
+
+.input--primary.invalid {
+ border: 2px solid #ce917e;
+}
+
+/* .input--primary:focus,
+.input--primary:invalid {
+ border: 2px solid #ce917e;
+} */
+
+
+.error-message {
+ text-align: right;
+ color: #ce917e;
+ opacity: 0;
 }
 
 

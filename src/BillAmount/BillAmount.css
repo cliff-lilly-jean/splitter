@@ -1,5 +1,7 @@
 .section-title.label {
- display: block;
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ justify-content: space-between;
  margin-bottom: 8px;
  letter-spacing: .01em;
  font-size: 12px;

@@ -17,7 +17,6 @@ const BillAmount = () => {
  // get the action creators
  const { updateBillAmount } = bindActionCreators(actionCreators, dispatch);
 
-
  const handleChange = (userInput) => {
 
   // get the users input
@@ -25,22 +24,44 @@ const BillAmount = () => {
 
   // Check to see if the input value is a number or not
   const isNumber = isNaN(currentUserInputNumber);
+  const billAmountInput = document.getElementsByClassName('input--primary bill-amount');
+  const errorMessage = document.querySelector('.error-message');
+
+  let requiredState = billAmountInput[0].required;
 
   // Handle case where input is not a number
   if (isNumber === true) {
-   // alert('You need to input a number');
-   currentUserInputNumber = 0;
-   const billAmountInput = document.getElementsByClassName('bill-amount');
-   billAmountInput[0].value = '';
+   requiredState = true;
+   errorMessage.style.opacity = 1;
+   billAmountInput[0].classList.add('invalid');
   } else {
-   return updateBillAmount(currentUserInputNumber);
+   requiredState = false;
+   errorMessage.style.opacity = 0;
+   billAmountInput[0].classList.remove('invalid');
   }
+
+  // handle case where the number is 0
+  if (parseInt(currentUserInputNumber) == 0) {
+   currentUserInputNumber = parseInt(currentUserInputNumber);
+   requiredState = true;
+   errorMessage.style.opacity = 1;
+   billAmountInput[0].classList.add('invalid');
+  } else if (parseInt(currentUserInputNumber) >= 1) {
+   currentUserInputNumber = parseInt(currentUserInputNumber);
+   errorMessage.style.opacity = 0;
+   requiredState = false;
+   billAmountInput[0].classList.remove('invalid');
+  } else {
+   currentUserInputNumber = currentUserInputNumber.toString();
+  }
+  return updateBillAmount(currentUserInputNumber);
  };
 
  return (
   <div className="bill">
-   <label className="label section-title" htmlFor="bill">Bill</label>
-   <input className="bill-amount input--primary" value={updateBillAmount(bill)} required type="text" name="bill" onChange={handleChange} />
+   <label className="label section-title" htmlFor="bill">Bill <span className="error-message">
+    {typeof bill == 'string' ? "Can't be a letter" : "Can't be zero"}</span></label>
+   <input className="bill-amount input--primary" value={updateBillAmount(bill)} required name="bill" onChange={handleChange} />
   </div>
  );
 };

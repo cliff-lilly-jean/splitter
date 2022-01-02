@@ -29,7 +29,7 @@ const NumberOfPeople = () => {
   if (isNumber === true) {
    currentUserInputNumber = 0;
    const numOfPplInput = document.querySelector('.people');
-   // numOfPplInput.value = '';
+
   } else {
    // numOfPplInput.removeAttribute('attrName');
    return updateNumberOfPpl(currentUserInputNumber);
@@ -38,7 +38,7 @@ const NumberOfPeople = () => {
 
  return (
   <div className="number-of-people">
-   <label htmlFor="people" className="section-title num-of-ppl">Number of People</label>
+   <label htmlFor="people" className="section-title num-of-ppl">Number of People <span className="error-message">Can't be zero</span></label>
    <input type="text" name="people" id="people" className='people input--primary' required value={updateNumberOfPpl(numOfPpl)} onChange={handleChange} />
   </div>
  );
