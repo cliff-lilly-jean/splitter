@@ -105,12 +105,6 @@ grid-template-columns: repeat(2, 1fr);
  border: 2px solid #ce917e;
 }
 
-/* .input--primary:focus,
-.input--primary:invalid {
- border: 2px solid #ce917e;
-} */
-
-
 .error-message {
  text-align: right;
  color: #ce917e;

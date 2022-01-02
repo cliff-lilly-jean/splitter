@@ -65,7 +65,7 @@ const TipPercentage = () => {
   if (currentUserInputNumber.length <= 0 || currentUserInputNumber === '') {
    currentUserInputNumber = 'Custom';
    console.log(currentUserInputNumber);
-   updateTipPercentage(currentUserInputNumber);
+   return updateTipPercentage(currentUserInputNumber);
   }
 
   return updateTipPercentage(currentUserInputNumber);
@@ -86,7 +86,7 @@ const TipPercentage = () => {
     <button className="option" onClick={handleClick}>{generateATipPercent(25)}</button>
     <button className="option" onClick={handleClick}>{generateATipPercent(50)}</button>
     {/* TODO: fix this input to take in numbers and return those numbers as a percentage to be calculated in the formula */}
-    <input className="option custom" onClick={(e) => resetInput(e)} onChange={handleChange} value={tipPercentage} name="tip" />
+    <input className="option custom" onClick={(e) => resetInput(e)} onChange={handleChange} value={updateTipPercentage(tipPercentage)} name="tip" />
    </div>
   </div>
  );
