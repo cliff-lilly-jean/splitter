@@ -30,6 +30,8 @@
 .option.custom {
  background: #f4f8fa;
  color: #6e8787;
+ text-align: right;
+ caret-color: #99d3cb;
 }
 
 .option:hover {
