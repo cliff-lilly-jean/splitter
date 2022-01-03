@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://split-the-tip.netlify.app/)
+- [Solution URL](https://www.frontendmentor.io/solutions/css-grid-react-redux-jsx-BWaIEENU9)
+- [Live Site URL](https://split-the-tip.netlify.app/)
 
 ## My process
 
